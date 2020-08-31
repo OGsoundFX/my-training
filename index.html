@@ -9,10 +9,10 @@
   <body>
     <div class="container">
       <h1> Hello Again </h1>
-      <div ng-controller="CounterController as counter">
-          <h4>Your number is: {{ counter.count }} </h4>
-            <button ng-click="counter.decrement();">-</button>
-            <button ng-click="counter.increment();">+</button>
+      <div ng-controller="CounterController">
+          <h4>Your number is: {{ count }} </h4>
+            <button ng-click="decrement();">-</button>
+            <button ng-click="increment();">+</button>
       </div>
   </div>
     

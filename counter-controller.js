@@ -1,13 +1,16 @@
-function CounterController() {
-    this.count = 0;
-    this.increment = () => {
-        this.count ++;
+function CounterController($scope) {
+    $scope.count = 0;
+    $scope.increment = () => {
+        $scope.count ++;
     };
-    this.decrement = () => {
-        if(this.count > 0) {
-            this.count --;
+    $scope.decrement = () => {
+        if($scope.count > 0) {
+            $scope.count --;
         };
     };
+    $scope.$watch('count', function (newValue, oldValue) {
+        console.log(newValue, oldValue);
+    });
 };
 
 angular
