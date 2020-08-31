@@ -1,5 +1,6 @@
 function CounterController($scope) {
     this.count = 0;
+    this.name = "Drink count";
     this.countList = [];
     this.increment = () => {
         this.count ++;
