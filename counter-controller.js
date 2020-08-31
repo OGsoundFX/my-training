@@ -1,14 +1,31 @@
 function CounterController($scope) {
-    $scope.count = 0;
-    $scope.increment = () => {
-        $scope.count ++;
+    this.count = 0;
+    this.countList = [];
+    this.increment = () => {
+        this.count ++;
+        this.countList.unshift({id: this.count});
     };
-    $scope.decrement = () => {
-        if($scope.count > 0) {
-            $scope.count --;
+    this.decrement = () => {
+        if(this.count > 0) {
+            this.count --;
+            this.countList.unshift({id: this.count});
         };
     };
-    $scope.$watch('count', function (newValue, oldValue) {
+    // $scope.$watch(angular.bind(this, function () {
+    //     return this.countList;
+    // }), function (newValue, oldValue) {
+    //     if (newValue === oldValue) {
+    //         return;
+    //     };
+    //     console.log(newValue, oldValue);
+    // }, true); // true enables to do a deep watch of countList which can be inconvenient
+
+    $scope.$watchCollection(angular.bind(this, function () {
+        return this.countList;
+    }), function (newValue, oldValue) {
+        if (newValue === oldValue) {
+            return;
+        };
         console.log(newValue, oldValue);
     });
 };
