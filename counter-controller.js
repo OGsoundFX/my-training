@@ -2,6 +2,13 @@ function CounterController($scope) {
     this.count = 0;
     this.name = "Drink count";
     this.countList = [];
+    this.changeName = () => {
+        if (this.name === "Drink count") {
+            this.name = "Food count";
+        } else if (this.name === "Food count") {
+            this.name = "Drink count";
+        };
+    }
     this.increment = () => {
         this.count ++;
         this.countList.unshift({id: this.count});
