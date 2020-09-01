@@ -16,11 +16,22 @@
         </div>
       </div>
   </div>
-    
+
+  <div class="empty-block"></div>
+
+  <div class="container">
+    <div ng-controller="ErrorController as error">
+        <div ng-repeat="errorMessage in error.errorMessages" errormessage type="{{ errorMessage.type }}">
+          <p> {{ errorMessage.error }} </p>
+        </div>
+      </div>
+    </div>
 
     <script src="app.js"></script>
     <script src="counter-controller.js"></script>
     <script src="testing-directive.js"></script>
     <script src="error-message-directive.js"></script>
+    <script src="error-message-controller.js"></script>
+    <script src="stretch-directive.js"></script>
   </body>
 </html>

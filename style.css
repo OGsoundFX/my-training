@@ -1,3 +1,7 @@
+.empty-block {
+    height: 50px;
+}
+
 .red {
     color: red;
 }
@@ -9,6 +13,7 @@
 .error {
     border: solid 1px green;
     border-radius: 4px;
+    padding: 10px;
 }
 
 .error-medium {
