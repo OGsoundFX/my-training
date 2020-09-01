@@ -12,7 +12,7 @@
       <h1> Hello Again </h1>
       <div>
         <div ng-controller="CounterController as counter">
-          <counter class="red" name="{{counter.name}}"></counter>
+          <counter class="red" name="{{counter.name}}"></counter> <!-- here the name="" creates a new element in $attrs with the value stored in name froö the controller -->
         </div>
       </div>
   </div>
@@ -21,5 +21,6 @@
     <script src="app.js"></script>
     <script src="counter-controller.js"></script>
     <script src="testing-directive.js"></script>
+    <script src="error-message-directive.js"></script>
   </body>
 </html>

@@ -5,3 +5,16 @@
 .green {
     color: green;
 }
+
+.error {
+    border: solid 1px green;
+    border-radius: 4px;
+}
+
+.error-medium {
+    border: solid 1px blue;
+}
+
+.error-big {
+    border: solid 1px red;
+}
