@@ -1,32 +1,38 @@
-function errormessage () {
+function errorMessage () {
     return {
         restrict: 'A',
-        // compile: function($element, $attrs) {
-        //     $element.addClass('error');
-        //     return function postLink($scope, $element, $attrs) {
-        //         $element.addClass('error-' + $attrs.type);
-        //     }
-        // }
-        link: function($scope, $element, $attrs) {
-            console.log("hello");
-            console.log($attrs)
+        compile: function($element, $attrs) { // no need for &scope as everything is loaded for the base template
+            
+            // Best practise:
+
+            $element.addClass('error');
+            return function postLink($scope, $element, $attrs) { // this is one of the 2 link functions, but here we don't need the preLink
+                $element.addClass($attrs.type);
+            }
+
+            // Conventional structure with pre and post links:
+
+            // return {
+            //     pre: function ($scope, $element, $attrs) { // this is one of the 2 link functions, but here we don't need the preLink
+            //     $element.addClass('error');
+            //     $element.addClass('background');
+            //     },
+
+            //     post: function ($scope, $element, $attrs) { // this is one of the 2 link functions, but here we don't need the preLink
+            //     $element.addClass($attrs.type);
+            //     }
+            // }
+
         }
+        
+        // this is the easiest way but less effective
+        // link: function($scope, $element, $attrs) {
+        //     $element.addClass('error');
+        //     $element.addClass($attrs.type); // called twice which is why it is less efficient then compile
+        // }
     };
 };
 
-// function errorMessage () {
-//     return {
-//         restrict: 'A',
-//         link: function($scope, $element, $attrs) {
-//             const element = $element[0];
-//             console.log(element);
-//             element.addEventListener('click', () => {
-//                 console.log("I just clicked");
-//             });
-//         }
-//     };
-// };
-
 angular
     .module('app')
-    .directive('errormessage', errormessage)
+    .directive('errorMessage', errorMessage)

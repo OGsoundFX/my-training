@@ -1,8 +1,8 @@
 function ErrorController () {
     this.errorMessages = [
         {
-        error: 'There is an error',
-        type: 'error'
+            error: 'There is an error',
+            type: 'error'
         },{
             error: 'There is a Medium error',
             type: 'error-medium'

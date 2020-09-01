@@ -21,7 +21,7 @@
 
   <div class="container">
     <div ng-controller="ErrorController as error">
-        <div ng-repeat="errorMessage in error.errorMessages" errormessage type="{{ errorMessage.type }}">
+        <div ng-repeat="errorMessage in error.errorMessages" error-message type="{{ errorMessage.type }}">
           <p> {{ errorMessage.error }} </p>
         </div>
       </div>
