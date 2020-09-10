@@ -8,8 +8,14 @@
     <script src="libs/angular.js"></script>
   </head>
   <body>
+
     <div class="container">
-      <h1> Hello Again </h1>
+      <label for="">Type in your name</label>
+      <input type="text" ng-model="input">
+      <h3>Hello: {{ input }} </h3>
+    </div>
+    <div class="container">
+      <h3> Welcome to the drink count! </h3>
       <div>
         <div ng-controller="CounterController as counter">
           <counter class="red" name="{{counter.name}}"></counter> <!-- here the name="" creates a new element in $attrs with the value stored in name froö the controller -->
